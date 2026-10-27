@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f5ef">
+<title>Invitation - Speaker Session</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{--paper:#fbf8f2;--ink:#24231f;--muted:#77736b;--accent:#c65f45;--accent-dark:#9e432f;--line:#e7dfd3;--green:#667b5b}
+*{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;color:var(--ink);background:radial-gradient(circle at 15% 15%,rgba(198,95,69,.08),transparent 28rem),radial-gradient(circle at 90% 85%,rgba(102,123,91,.10),transparent 25rem),var(--paper);font-family:"Poppins","Avenir Next",Avenir,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{width:min(100%,760px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.topline span:last-child{letter-spacing:.08em}
+.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.84);box-shadow:0 24px 70px rgba(52,39,24,.10)}
+.poster{min-height:0;padding:clamp(26px,6vw,56px);padding-bottom:clamp(18px,3vw,28px);display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,250,241,.84)),repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(198,95,69,.025) 12px,rgba(198,95,69,.025) 13px)}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);font-weight:700}
+h1{margin:14px 0 8px;max-width:560px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,5vw,94px);line-height:.94;font-weight:500;letter-spacing:-.065em}
+.subtitle{max-width:470px;color:#615d55;font-size:clamp(15px,2.4vw,18px);line-height:1.65}
+.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.detail-label{display:block;margin-bottom:7px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+.detail-value{font-size:13px;line-height:1.5;font-weight: 500}
+.actions{padding:24px clamp(22px,5vw,48px) 30px;background:#fff;border-top:1px solid var(--line)}
+.prompt{margin:0 0 15px;font-size:14px;font-weight:650}
+.button-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+button,.button{border:0;border-radius:12px;min-height:52px;padding:14px 18px;display:inline-flex;justify-content:center;align-items:center;gap:8px;font:inherit;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease,box-shadow .18s ease;will-change:transform}
+button:hover,.button:hover{transform:translateY(-2px)}
+.primary{color:#fff;background:var(--accent);box-shadow:0 8px 18px rgba(198,95,69,.18)}
+.primary:hover{background:var(--accent-dark)}
+.secondary{color:var(--ink);background:#f4f0e9;border:1px solid var(--line)}
+.secondary:hover{background:#f4f0e9}
+#noButton:hover{background:#f4f0e9;transform:translateY(-2px)}
+.footnote{margin:15px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+.progress{display:flex;gap:5px;margin-top:20px}
+.progress span{height:3px;flex:1;border-radius:99px;background:#e9e2d8}
+.progress span.active{background:var(--accent)}
+.slide-tag{display:inline-flex;align-items:center;gap:8px;margin-top:14px;margin-bottom:0;color:var(--green);font-size:12px;font-weight:700}
+.slide-tag:before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%}
+.final-note{text-align:center;padding:18px 8px 0;color:var(--muted);font-size:12px}
+@media(max-width:520px){body{padding:14px}.poster{min-height:0}.event-grid{grid-template-columns:1fr;gap:15px}.button-row{grid-template-columns:1fr}.topline{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="topline"><span>A small invitation</span><span id="slideCount">A gentle reminder · 01</span></div>
+  <section class="card" aria-live="polite">
+    <div class="poster">
+      <div>
+        <div class="eyebrow" id="eyebrow">You're invited</div>
+        <h1 id="headline">Please<br>Come.</h1>
+        <p class="subtitle" id="subtitle">It really won't be the same without you. Take a moment, have a look, and come be part of it.</p>
+        <div class="slide-tag" id="tag">Your presence would mean a lot</div>
+      </div>
+    </div>
+    <div class="actions">
+      <p class="prompt" id="question">So… can we count you in?</p>
+      <div class="button-row" id="buttonRow">
+        <a class="button primary" id="formButton" href="https://docs.google.com/forms/d/e/1FAIpQLScyQlOvRGQPeqjSScPtvWVaMxzl8AOSIogCb4h3XDgKdT0sbw/viewform" target="_blank" rel="noopener noreferrer">Fill the form <span aria-hidden="true">↗</span></a>
+        <button class="secondary" id="noButton" type="button">Won't come</button>
+      </div>
+      <div class="event-grid">
+        <div><span class="detail-label">The event</span><span class="detail-value" id="eventName">Speaker Session</span><br><span class="detail-value">Dr. Antar Bandopadhyay</span></div>
+        <div><span class="detail-label">When</span><span class="detail-value" id="eventDate">November 3, 2026 · 10:00 AM onwards</span></div>
+        <div><span class="detail-label">Where</span><span class="detail-value" id="eventPlace">B.R. Ambedkar Sabhaghar Kirori Mal College</span></div>
+      </div>
+      <div class="progress" id="progress" aria-label="Reminder progress"><span class="active"></span><span></span><span></span><span></span></div>
+      <p class="footnote" id="footnote">Fill the form, be a part.</p>
+    </div>
+  </section>
+  <p class="final-note">No pressure—just hoping you'll join us. ♡</p>
+</main>
+<script>
+const CONFIG={formUrl:"https://docs.google.com/forms/d/e/1FAIpQLScyQlOvRGQPeqjSScPtvWVaMxzl8AOSIogCb4h3XDgKdT0sbw/viewform",eventName:"Speaker Session",eventDate:"November 3, 2026 · 10:00 AM",eventPlace:"B.R. Ambedkar Sabhaghar Kirori Mal College"};
+const slides=[
+{eyebrow:"You're invited",headline:"Please<br>Come.",subtitle:"It really won't be the same without you. Take a moment, have a look, and come be part of it.",tag:"Your presence would mean a lot",question:"So… can we count you in?",button:"Won't come",footnote:"The form link is a placeholder—replace it with your actual Google Form URL."},
+{eyebrow:"One more thing",headline:"It needs<br>your vibe.",subtitle:"The best moments happen when everyone's there. Come for the event, stay for the memories.",tag:"Good people make good events",question:"Still thinking about it?",button:"Still won't come",footnote:"No worries. But we'd genuinely love to see you there."},
+{eyebrow:"Picture this",headline:"You.<br>There.",subtitle:"The conversations, the laughs, the refreshments. Imagine missing all of that when you could be part of it.",tag:"You'd make it better",question:"Give it one more thought?",button:"Not convinced",footnote:"One quick form, and you're on the list."},
+{eyebrow:"Last little nudge",headline:"Come on,<br>please? ♡",subtitle:"This is our final dramatic plea. We'd be so happy if you came—but the choice is always yours.",tag:"Invitation delivered with love",question:"Okay… will you come?",button:"I really can't",footnote:"If you change your mind, Fill the form is still right there."}
+];
+const $=id=>document.getElementById(id);let currentSlide=0;
+$("formButton").href=CONFIG.formUrl;$("eventName").textContent=CONFIG.eventName;$("eventDate").textContent=CONFIG.eventDate;$("eventPlace").textContent=CONFIG.eventPlace;
+function renderSlide(index){const s=slides[index];$("eyebrow").textContent=s.eyebrow;$("headline").innerHTML=s.headline;$("subtitle").textContent=s.subtitle;$("tag").textContent=s.tag;$("question").textContent=s.question;$("noButton").textContent=s.button;$("footnote").textContent=s.footnote;$("slideCount").textContent=`A gentle reminder · ${String(index+1).padStart(2,"0")}`;[...$("progress").children].forEach((bar,i)=>bar.classList.toggle("active",i<=index));}
+function swapButtonsSmoothly(){
+ const row=$("buttonRow"),a=$("formButton"),b=$("noButton"),buttons=[a,b],reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ const before=new Map(buttons.map(el=>[el,el.getBoundingClientRect()]));
+ if(a.nextElementSibling===b)row.insertBefore(b,a);else row.insertBefore(a,b);
+ if(!reduced)buttons.forEach(el=>{const first=before.get(el),last=el.getBoundingClientRect();el.animate([{transform:`translate(${first.left-last.left}px,${first.top-last.top}px)`},{transform:"translate(0,0)"}],{duration:420,easing:"cubic-bezier(0.22, 1, 0.36, 1)"});});
+}
+let hoverSwapLocked=false;
+$("noButton").addEventListener("mousemove",()=>{
+ if(currentSlide===slides.length-1 && !hoverSwapLocked){
+  hoverSwapLocked=true;
+  swapButtonsSmoothly();
+  window.setTimeout(()=>{hoverSwapLocked=false;},460);
+ }
+});
+$("noButton").addEventListener("click",()=>{
+ if (hoverSwapLocked) return
+ if(currentSlide<slides.length-1){currentSlide++;renderSlide(currentSlide);}
+ else{swapButtonsSmoothly();}
+});
+</script>
+</body>
+</html>
